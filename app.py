@@ -1,36 +1,37 @@
 # app.py
-#from flask import Flask, render_template
+from flask import Flask, render_template
+from flask_frozen import Freezer
+import os
 
 # Create a Flask application instance
-#app = Flask(__name__)
+app = Flask(__name__)
 
-"""
-#unquote if workaround below doesn't work
+# Configure Flask to look for templates and static files correctly
+app.template_folder = 'templates'
+app.static_folder = 'static' # Assuming you'll add a static folder later for CSS/JS
+
+# Configure Flask-Frozen
+# The 'build' folder is the default output directory for Flask-Frozen
+# This is where your static HTML files will be generated.
+app.config['FREEZER_DESTINATION'] = 'build'
+freezer = Freezer(app)
+
 # Define a route for the home page ('/')
-#@app.route('/')
-#def home():
+@app.route('/')
+def home():
     # Render the 'index.html' template when the home page is accessed
     return render_template('index.html')
 
-# This block ensures the Flask development server runs only when the script is executed directly
+# Define a route for the about page ('/about')
+@app.route('/about')
+def about():
+    # You'll need to create templates/about.html
+    return render_template('about.html')
+
+# This block ensures that when app.py is executed directly (e.g., by Netlify's build command),
+# it triggers the freezing process to generate static files.
 if __name__ == '__main__':
-    # Run the Flask application in debug mode (useful for development, automatically reloads on code changes)
-    app.run(debug=True)
-"""
-
-
-# after frozen-flask
-
-from flask import Flask, render_template
-from flask_frozen import Freezer
-
-app = Flask(__name__)
-freezer = Freezer(app)
-
-@app.route('/')
-def home():
-    return 'Hello, netlify!'
-
-if __name__ == '__main__':
+    print(f"Generating static site to: {app.config['FREEZER_DESTINATION']}")
     freezer.freeze()
+    print("Static site generation complete.")
 
