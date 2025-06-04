@@ -1,8 +1,12 @@
 # app.py
 from flask import Flask, render_template
 from flask_frozen import Freezer
+import shutil
 import os
 
+build_dir = 'build'
+if os.path.exists(build_dir):
+    shutil.rmtree(build_dir)
 # Create a Flask application instance
 app = Flask(__name__)
 
@@ -59,6 +63,11 @@ def gallery():
 
     # Pass the list of image_files to the gallery.html template
     return render_template('gallery.html', image_files=image_files)
+
+
+@app.route('/contact/')  # <--- NEW ROUTE FOR CONTACT
+def contact():
+    return render_template('contact.html')
 
 
 @app.route("/google374d68330201d250.html")
