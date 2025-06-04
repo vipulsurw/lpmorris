@@ -55,6 +55,11 @@ def gallery():
     return render_template('gallery.html', image_files=image_files)
 
 
+@app.route("/google374d68330201d250.html")
+def google_site_verf():
+    return render_template("google374d68330201d250.html")
+
+
 # This block ensures that when app.py is executed directly (e.g., by Netlify's build command),
 # it triggers the freezing process to generate static files.
 if __name__ == '__main__':
