@@ -32,15 +32,16 @@
                 <h2>Our Gallery</h2>
                 <p>Welcome to our visual archive! Here you can find a collection of photographs and videos from our performances, events, and historical moments. Witness the spirit of traditional English Morris dance through our vibrant displays.</p>
 
-                <div class="gallery-grid">
-                    <!-- Image Gallery Items -->
-                    <div class="gallery-item">
-                        <!-- Changed href to data-large-src for JS handling -->
-                        <a href="#" class="gallery-image-link" data-large-src="static/images/gallery/image1.jpg" data-alt="Morris dancers performing in a field">
-                            <img src="static/images/gallery/image1_thumb.jpg" alt="Morris dancers performing in a field">
-                            <div class="item-caption">Summer Festival Dance</div>
-                        </a>
-                    </div>
+                <div class="gallery-item">
+                    <a href="#" class="gallery-image-link"
+                       data-large-src="{{ url_for('static', filename='images/gallery/image1.jpg') }}"
+                       data-alt="Morris dancers performing in a field">
+                        <img src="{{ url_for('static', filename='images/gallery/image1.jpg') }}"
+                             alt="Morris dancers performing in a field">
+                        <div class="item-caption">Summer Festival Dance</div>
+                    </a>
+                </div>
+
                     <div class="gallery-item">
                         <a href="#" class="gallery-image-link" data-large-src="static/images/gallery/image2.jpg" data-alt="Group of Morris dancers in traditional attire">
                             <img src="static/images/gallery/image2_thumb.jpg" alt="Group of Morris dancers in traditional attire">
