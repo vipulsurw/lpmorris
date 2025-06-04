@@ -23,10 +23,10 @@ def home():
     return render_template('index.html')
 
 # Define a route for the about page ('/about')
-@app.route('/about')
-def about():
-    # You'll need to create templates/about.html
-    return render_template('about.html')
+#@app.route('/about')
+#def about():
+#    # You'll need to create templates/about.html
+#    return render_template('about.html')
 
 # This block ensures that when app.py is executed directly (e.g., by Netlify's build command),
 # it triggers the freezing process to generate static files.

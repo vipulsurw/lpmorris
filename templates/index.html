@@ -1,60 +1,95 @@
-<!-- templates/index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Personal Website</title>
-    <style>
-        /* Basic styling for a clean look */
-        body {
-            font-family: 'Inter', sans-serif; /* Using Inter for a modern look */
-            margin: 20px;
-            background-color: #f4f4f4;
-            color: #333;
-            text-align: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 90vh; /* Ensure it takes full viewport height */
-        }
-        .container {
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 12px; /* Rounded corners */
-            box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* Softer shadow */
-            max-width: 600px;
-            margin: auto; /* Center horizontally */
-            animation: fadeIn 1s ease-out; /* Simple fade-in animation */
-        }
-        h1 {
-            color: #0056b3;
-            margin-bottom: 15px;
-        }
-        p {
-            line-height: 1.6;
-            margin-bottom: 10px;
-        }
-        a {
-            color: #007bff;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        /* Keyframe animation for fade-in effect */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-    </style>
+    <title>London Pride Morris - Home</title>
+    <!-- Link to Font Awesome for social media icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Link to Google Fonts for 'Inter' -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Link to your custom stylesheet -->
+    <link rel="stylesheet" href="static/style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome to My Personal Website!</h1>
-        <p>Hello there! This is a simple website built with Flask, deployed on Netlify.</p>
-        <p>Visit the <a href="/about">About page</a>.</p>
-        <p>Stay tuned for more updates!</p>
-    </div>
+    <header class="header">
+        <nav class="navbar">
+            <a href="/" class="nav-item">HOME</a>
+            <a href="#" class="nav-item">DONATE</a>
+            <a href="#" class="nav-item">GALLERY</a>
+            <a href="#" class="nav-item">EVENTS</a>
+            <a href="#" class="nav-item">WEEKEND OF DANCE</a>
+            <a href="/about" class="nav-item">CONTACT</a>
+            <a href="#" class="nav-item">LINKS</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-content">
+                <img src="https://placehold.co/100x100/A00/FFF?text=Logo" alt="Thaxted Morris Men Logo" class="hero-logo">
+                <h1>Thaxted Morris Men</h1>
+                <p>Founded 1911</p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section welcome-section">
+            <div class="content-left">
+                <h2>Welcome</h2>
+            </div>
+            <div class="content-right">
+                <p>We are a friendly morris club specialising in the Cotswold traditions, and based in central London.</p>
+            </div>
+        </section>
+
+        <section class="content-section contact-section">
+            <div class="content-left">
+                <h2>Contact Us</h2>
+                <p>If you wish to enquire about joining the London Pride Morris or book us for an event, contact us on the information below or alternatively fill in the form.</p>
+                <p><strong>07884 401240</strong></p>
+                <p><strong>bagman@lpmorris.org.uk</strong></p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="content-right contact-form-container">
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" name="firstName">
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" name="lastName">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5"></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Send</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="social-icons footer-social">
+            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>&copy; 2025 London Pride Morris. All Rights Reserved.</p>
+    </footer>
 </body>
 </html>
