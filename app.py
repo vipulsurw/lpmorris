@@ -15,11 +15,17 @@ app.static_folder = 'static'  # Assuming you'll add a static folder later for CS
 # This is where your static HTML files will be generated.
 app.config['FREEZER_DESTINATION'] = 'build'
 # This tells Flask-Frozen to generate a sitemap.xml
-app.config['FREEZER_SITEMAP_FILENAME'] = 'sitemap.xml'
+#app.config['FREEZER_SITEMAP_FILENAME'] = 'sitemap.xml'
 # IMPORTANT: Setting this to True (or omitting it as it's the default)
 # will make Flask-Frozen generate clean URLs like /gallery/index.html
 # instead of /gallery.html or just /gallery. This is the standard for static sites.
 #app.config['FREEZER_REMOVE_EXTENSIONS'] = True  # <--- CHANGED THIS LINE
+app.config['FREEZER_SITEMAP_INCLUDE_RULES_WITHOUT_PARAMS'] = True
+app.config['FREEZER_SITEMAP_URL_SCHEME'] = 'https'
+app.config[
+    'FREEZER_BASE_URL'] = 'https://lpmorris.netlify.app'  # change this to your live domain
+app.config['FREEZER_SITEMAP_FILENAME'] = 'sitemap.xml'
+
 freezer = Freezer(app)
 
 
