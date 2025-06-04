@@ -27,7 +27,7 @@ app.config['FREEZER_SITEMAP_FILENAME'] = 'sitemap.xml'
 # IMPORTANT: Setting this to True (or omitting it as it's the default)
 # will make Flask-Frozen generate clean URLs like /gallery/index.html
 # instead of /gallery.html or just /gallery. This is the standard for static sites.
-app.config['FREEZER_REMOVE_EXTENSIONS'] = True  # <--- CHANGED THIS LINE
+#app.config['FREEZER_REMOVE_EXTENSIONS'] = True  # <--- CHANGED THIS LINE
 freezer = Freezer(app)
 
 
