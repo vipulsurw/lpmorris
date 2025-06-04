@@ -32,62 +32,17 @@
                 <h2>Our Gallery</h2>
                 <p>Welcome to our visual archive! Here you can find a collection of photographs and videos from our performances, events, and historical moments. Witness the spirit of traditional English Morris dance through our vibrant displays.</p>
 
-                <div class="gallery-item">
-                    <a href="#" class="gallery-image-link"
-                       data-large-src="{{ url_for('static', filename='images/gallery/image1.jpg') }}"
-                       data-alt="Morris dancers performing in a field">
-                        <img src="{{ url_for('static', filename='images/gallery/image1.jpg') }}"
-                             alt="Morris dancers performing in a field">
-                        <div class="item-caption">Summer Festival Dance</div>
-                    </a>
-                </div>
-
-                    <div class="gallery-item">
-                        <a href="#" class="gallery-image-link" data-large-src="static/images/gallery/image2.jpg" data-alt="Group of Morris dancers in traditional attire">
-                            <img src="static/images/gallery/image2_thumb.jpg" alt="Group of Morris dancers in traditional attire">
-                            <div class="item-caption">Group Portrait</div>
-                        </a>
-                    </div>
-                    <div class="gallery-item">
-                        <a href="#" class="gallery-image-link" data-large-src="static/images/gallery/image3.jpg" data-alt="Dancers with sticks in a village square">
-                            <img src="static/images/gallery/image3_thumb.jpg" alt="Dancers with sticks in a village square">
-                            <div class="item-caption">Village Square Performance</div>
-                        </a>
-                    </div>
-                    <div class="gallery-item">
-                        <a href="#" class="gallery-image-link" data-large-src="static/images/gallery/image4_large.jpg" data-alt="Close-up of a dancer's bells and costume">
-                            <img src="static/images/gallery/image4_thumb.jpg" alt="Close-up of a dancer's bells and costume">
-                            <div class="item-caption">Detail of Costume</div>
-                        </a>
-                    </div>
-
-                    <!-- YouTube Video Gallery Items (these will still open in a new tab) -->
-                    <div class="gallery-item video-item">
-                        <a href="https://www.youtube.com/watch?v=xt9b5AEM23c" target="_blank">
-                            <img src="https://img.youtube.com/vi/VIDEO_ID_1/hqdefault.jpg" alt="YouTube video thumbnail of Morris dance">
-                            <div class="item-caption">London Pride Morris - Spring Dance</div>
-                            <div class="play-icon"><i class="fas fa-play-circle"></i></div>
-                        </a>
-                    </div>
-                    <div class="gallery-item video-item">
-                        <a href="https://www.youtube.com/watch?v=BxZqR1L5zAo" target="_blank">
-                            <img src="https://img.youtube.com/vi/VIDEO_ID_2/hqdefault.jpg" alt="YouTube video thumbnail of Morris dance history">
-                            <div class="item-caption">Historical Performance</div>
-                            <div class="play-icon"><i class="fas fa-play-circle"></i></div>
-                        </a>
-                    </div>
-                    <div class="gallery-item video-item">
-                        <a href="https://www.youtube.com/watch?v=CpaYwkwZ73k" target="_blank">
-                            <img src="https://img.youtube.com/vi/VIDEO_ID_3/hqdefault.jpg" alt="YouTube video thumbnail of Morris dance tutorial">
-                            <div class="item-caption">Learning the Steps</div>
-                            <div class="play-icon"><i class="fas fa-play-circle"></i></div>
-                        </a>
-                    </div>
-                    <div class="gallery-item video-item">
-                        <a href="https://www.youtube.com/watch?v=uDChHQNJuwM" target="_blank">
-                            <img src="https://img.youtube.com/vi/VIDEO_ID_4/hqdefault.jpg" alt="YouTube video thumbnail of Morris dance festival">
-                            <div class="item-caption">Festival Highlights</div>
-                            <div class="play-icon"><i class="fas fa-play-circle"></i></div>
+                            {% for image_file in image_files %}
+                            <div class="gallery-item">
+                                <a href="#" class="gallery-image-link" 
+                                   data-large-src="/static/images/gallery/{{ image_file }}" 
+                                   data-alt="Morris dancers in action: {{ image_file | replace('_', ' ') | replace('.jpg', '') | replace('.jpeg', '') | replace('.png', '') | title }}">
+                                    <img src="/static/images/gallery/{{ image_file }}" 
+                                         alt="Morris dancers in action: {{ image_file | replace('_', ' ') | replace('.jpg', '') | replace('.jpeg', '') | replace('.png', '') | title }}">
+                                    <div class="item-caption">{{ image_file | replace('_', ' ') | replace('.jpg', '') | replace('.jpeg', '') | replace('.png', '') | title }}</div>
+                                </a>
+                            </div>
+                            {% endfor %}
                         </a>
                     </div>
                 </div>

@@ -3,7 +3,6 @@ from flask import Flask, render_template
 from flask_frozen import Freezer
 import os
 
-
 # Create a Flask application instance
 app = Flask(__name__)
 
@@ -31,12 +30,29 @@ def home():
     return render_template('index.html')
 
 
-
 # Define a route for the gallery page ('/gallery')
 @app.route('/gallery/')
 def gallery():
-    # Render the 'gallery.html' template
-    return render_template('gallery.html')
+    # Define the path to your gallery images folder
+    gallery_images_dir = os.path.join(app.static_folder, 'images', 'gallery')
+
+    # List to store image filenames
+    image_files = []
+
+    # Check if the directory exists to prevent errors
+    if os.path.exists(gallery_images_dir):
+        # Loop through files in the directory
+        for filename in os.listdir(gallery_images_dir):
+            # Check if it's a common image file type (you can add more)
+            if filename.lower().endswith(
+                ('.png', '.jpg', '.jpeg', '.gif', '.webp')):
+                # Add the filename to the list
+                image_files.append(filename)
+        # Sort the image files for consistent order
+        image_files.sort()
+
+    # Pass the list of image_files to the gallery.html template
+    return render_template('gallery.html', image_files=image_files)
 
 
 # This block ensures that when app.py is executed directly (e.g., by Netlify's build command),
