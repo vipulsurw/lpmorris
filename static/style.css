@@ -62,7 +62,7 @@ main {
 
 /* Hero Section */
 .hero-section {
-    /* Updated to use a local image path */
+    /* Updated to use a local image path with absolute URL */
     background: url('/static/images/hero-background.jpg') no-repeat center center/cover;
     color: var(--light-text-color);
     text-align: center;
@@ -135,7 +135,7 @@ main {
 /* Content Sections (Welcome, Contact) */
 .content-section {
     display: flex;
-    flex-wrap: wrap; /* Allow wrapping on small screens */
+    flex-wrap: wrap; /* Allow items to wrap on small screens */
     padding: 3rem 2rem;
     margin: 2rem auto;
     max-width: 1200px;

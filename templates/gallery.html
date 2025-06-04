@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>London Pride Morris - Gallery</title>
     <!-- SEO Meta Description -->
-    <meta name="description" content="Explore the London Pride Morris gallery of images and videos showcasing traditional English Morris dance performances, events, and history.">
+    <meta name="description" content="Explore the London Pride Morris's gallery of images and videos showcasing traditional English Morris dance performances, events, and history.">
     <!-- Link to Font Awesome for social media icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Link to Google Fonts for 'Inter' -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <!-- Link to your custom stylesheet -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Link to your custom stylesheet (NOW USING ABSOLUTE PATH) -->
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
     <header class="header">
@@ -32,17 +32,49 @@
                 <h2>Our Gallery</h2>
                 <p>Welcome to our visual archive! Here you can find a collection of photographs and videos from our performances, events, and historical moments. Witness the spirit of traditional English Morris dance through our vibrant displays.</p>
 
-                            {% for image_file in image_files %}
-                            <div class="gallery-item">
-                                <a href="#" class="gallery-image-link" 
-                                   data-large-src="/static/images/gallery/{{ image_file }}" 
-                                   data-alt="Morris dancers in action: {{ image_file | replace('_', ' ') | replace('.jpg', '') | replace('.jpeg', '') | replace('.png', '') | title }}">
-                                    <img src="/static/images/gallery/{{ image_file }}" 
-                                         alt="Morris dancers in action: {{ image_file | replace('_', ' ') | replace('.jpg', '') | replace('.jpeg', '') | replace('.png', '') | title }}">
-                                    <div class="item-caption">{{ image_file | replace('_', ' ') | replace('.jpg', '') | replace('.jpeg', '') | replace('.png', '') | title }}</div>
-                                </a>
-                            </div>
-                            {% endfor %}
+                <div class="gallery-grid">
+                    <!-- Dynamically Loaded Image Gallery Items -->
+                    {% for image_file in image_files %}
+                    <div class="gallery-item">
+                        <!-- Using absolute paths for image sources -->
+                        <a href="#" class="gallery-image-link" 
+                           data-large-src="/static/images/gallery/{{ image_file }}" 
+                           data-alt="Morris dancers in action: {{ image_file | replace('_', ' ') | replace('.jpg', '') | replace('.jpeg', '') | replace('.png', '') | title }}">
+                            <img src="/static/images/gallery/{{ image_file }}" 
+                                 alt="Morris dancers in action: {{ image_file | replace('_', ' ') | replace('.jpg', '') | replace('.jpeg', '') | replace('.png', '') | title }}">
+                            <div class="item-caption">{{ image_file | replace('_', ' ') | replace('.jpg', '') | replace('.jpeg', '') | replace('.png', '') | title }}</div>
+                        </a>
+                    </div>
+                    {% endfor %}
+
+                    <!-- YouTube Video Gallery Items (these will still open in a new tab) -->
+                    <!-- Note: YouTube thumbnails and embeds often require specific URLs based on video ID -->
+                    <div class="gallery-item video-item">
+                        <a href="https://www.youtube.com/watch?v=VIDEO_ID_1" target="_blank">
+                            <img src="https://img.youtube.com/vi/VIDEO_ID_1/mqdefault.jpg" alt="YouTube video thumbnail of Morris dance">
+                            <div class="item-caption">London Pride Morris - Spring Dance</div>
+                            <div class="play-icon"><i class="fas fa-play-circle"></i></div>
+                        </a>
+                    </div>
+                    <div class="gallery-item video-item">
+                        <a href="https://www.youtube.com/watch?v=VIDEO_ID_2" target="_blank">
+                            <img src="https://img.youtube.com/vi/VIDEO_ID_2/mqdefault.jpg" alt="YouTube video thumbnail of Morris dance history">
+                            <div class="item-caption">Historical Performance</div>
+                            <div class="play-icon"><i class="fas fa-play-circle"></i></div>
+                        </a>
+                    </div>
+                    <div class="gallery-item video-item">
+                        <a href="https://www.youtube.com/watch?v=VIDEO_ID_3" target="_blank">
+                            <img src="https://img.youtube.com/vi/VIDEO_ID_3/mqdefault.jpg" alt="YouTube video thumbnail of Morris dance tutorial">
+                            <div class="item-caption">Learning the Steps</div>
+                            <div class="play-icon"><i class="fas fa-play-circle"></i></div>
+                        </a>
+                    </div>
+                    <div class="gallery-item video-item">
+                        <a href="https://www.youtube.com/watch?v=VIDEO_ID_4" target="_blank">
+                            <img src="https://img.youtube.com/vi/VIDEO_ID_4/mqdefault.jpg" alt="YouTube video thumbnail of Morris dance festival">
+                            <div class="item-caption">Festival Highlights</div>
+                            <div class="play-icon"><i class="fas fa-play-circle"></i></div>
                         </a>
                     </div>
                 </div>
@@ -56,7 +88,7 @@
             <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
             <a class="social-icon" href="#"><i class="fab fa-instagram"></i></a>
         </div>
-        <p>© 2024 London Pride Morris All Rights Reserved.</p>
+        <p>© 2025 London Pride Morris. All Rights Reserved.</p>
     </footer>
 
     <!-- Lightbox Modal Structure -->
@@ -68,7 +100,7 @@
         </div>
     </div>
 
-    <!-- Link to your custom JavaScript -->
-    <script src="static/script.js"></script>
+    <!-- Link to your custom JavaScript (NOW USING ABSOLUTE PATH) -->
+    <script src="/static/script.js"></script>
 </body>
 </html>

@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
         lightboxImage.src = imageUrl;
         lightboxImage.alt = captionText; // Set alt text for accessibility
         lightboxCaption.textContent = captionText;
-        lightboxModal.style.display = 'flex'; // Make it visible
+        lightboxModal.style.display = 'flex'; // Make it visible (using flex for centering)
     };
 
     // Function to close the lightbox
@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener('click', (event) => {
             event.preventDefault(); // Prevent the default link behavior (opening in new tab)
             const largeSrc = link.getAttribute('data-large-src');
+            // Get caption from data-alt or fallback to item-caption text
             const caption = link.getAttribute('data-alt') || link.querySelector('.item-caption')?.textContent;
             openLightbox(largeSrc, caption);
         });
@@ -36,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Close the lightbox if clicked outside the image content
     lightboxModal.addEventListener('click', (event) => {
-        if (event.target === lightboxModal) {
+        if (event.target === lightboxModal) { // Only close if the click is directly on the modal background
             closeLightbox();
         }
     });
