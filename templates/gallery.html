@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thaxted Morris Men - Gallery</title>
+    <title>London Pride Morris - Gallery</title>
     <!-- SEO Meta Description -->
-    <meta name="description" content="Explore the Thaxted Morris Men's gallery of images and videos showcasing traditional English Morris dance performances, events, and history.">
+    <meta name="description" content="Explore the London Pride Morris gallery of images and videos showcasing traditional English Morris dance performances, events, and history.">
     <!-- Link to Font Awesome for social media icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Link to Google Fonts for 'Inter' -->
@@ -35,54 +35,55 @@
                 <div class="gallery-grid">
                     <!-- Image Gallery Items -->
                     <div class="gallery-item">
-                        <a href="static/images/gallery/image1_large.jpg" target="_blank">
+                        <!-- Changed href to data-large-src for JS handling -->
+                        <a href="#" class="gallery-image-link" data-large-src="static/images/gallery/image1.jpg" data-alt="Morris dancers performing in a field">
                             <img src="static/images/gallery/image1_thumb.jpg" alt="Morris dancers performing in a field">
                             <div class="item-caption">Summer Festival Dance</div>
                         </a>
                     </div>
                     <div class="gallery-item">
-                        <a href="static/images/gallery/image2_large.jpg" target="_blank">
+                        <a href="#" class="gallery-image-link" data-large-src="static/images/gallery/image2.jpg" data-alt="Group of Morris dancers in traditional attire">
                             <img src="static/images/gallery/image2_thumb.jpg" alt="Group of Morris dancers in traditional attire">
                             <div class="item-caption">Group Portrait</div>
                         </a>
                     </div>
                     <div class="gallery-item">
-                        <a href="static/images/gallery/image3_large.jpg" target="_blank">
+                        <a href="#" class="gallery-image-link" data-large-src="static/images/gallery/image3.jpg" data-alt="Dancers with sticks in a village square">
                             <img src="static/images/gallery/image3_thumb.jpg" alt="Dancers with sticks in a village square">
                             <div class="item-caption">Village Square Performance</div>
                         </a>
                     </div>
                     <div class="gallery-item">
-                        <a href="static/images/gallery/image4_large.jpg" target="_blank">
+                        <a href="#" class="gallery-image-link" data-large-src="static/images/gallery/image4_large.jpg" data-alt="Close-up of a dancer's bells and costume">
                             <img src="static/images/gallery/image4_thumb.jpg" alt="Close-up of a dancer's bells and costume">
                             <div class="item-caption">Detail of Costume</div>
                         </a>
                     </div>
 
-                    <!-- YouTube Video Gallery Items -->
+                    <!-- YouTube Video Gallery Items (these will still open in a new tab) -->
                     <div class="gallery-item video-item">
-                        <a href="https://www.youtube.com/watch?v=VIDEO_ID_1" target="_blank">
+                        <a href="https://www.youtube.com/watch?v=xt9b5AEM23c" target="_blank">
                             <img src="https://img.youtube.com/vi/VIDEO_ID_1/hqdefault.jpg" alt="YouTube video thumbnail of Morris dance">
-                            <div class="item-caption">Thaxted Morris - Spring Dance</div>
+                            <div class="item-caption">London Pride Morris - Spring Dance</div>
                             <div class="play-icon"><i class="fas fa-play-circle"></i></div>
                         </a>
                     </div>
                     <div class="gallery-item video-item">
-                        <a href="https://www.youtube.com/watch?v=VIDEO_ID_2" target="_blank">
+                        <a href="https://www.youtube.com/watch?v=BxZqR1L5zAo" target="_blank">
                             <img src="https://img.youtube.com/vi/VIDEO_ID_2/hqdefault.jpg" alt="YouTube video thumbnail of Morris dance history">
                             <div class="item-caption">Historical Performance</div>
                             <div class="play-icon"><i class="fas fa-play-circle"></i></div>
                         </a>
                     </div>
                     <div class="gallery-item video-item">
-                        <a href="https://www.youtube.com/watch?v=VIDEO_ID_3" target="_blank">
+                        <a href="https://www.youtube.com/watch?v=CpaYwkwZ73k" target="_blank">
                             <img src="https://img.youtube.com/vi/VIDEO_ID_3/hqdefault.jpg" alt="YouTube video thumbnail of Morris dance tutorial">
                             <div class="item-caption">Learning the Steps</div>
                             <div class="play-icon"><i class="fas fa-play-circle"></i></div>
                         </a>
                     </div>
                     <div class="gallery-item video-item">
-                        <a href="https://www.youtube.com/watch?v=VIDEO_ID_4" target="_blank">
+                        <a href="https://www.youtube.com/watch?v=uDChHQNJuwM" target="_blank">
                             <img src="https://img.youtube.com/vi/VIDEO_ID_4/hqdefault.jpg" alt="YouTube video thumbnail of Morris dance festival">
                             <div class="item-caption">Festival Highlights</div>
                             <div class="play-icon"><i class="fas fa-play-circle"></i></div>
@@ -99,7 +100,19 @@
             <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
             <a class="social-icon" href="#"><i class="fab fa-instagram"></i></a>
         </div>
-        <p>&copy; 2024 Thaxted Morris Men. All Rights Reserved.</p>
+        <p>© 2024 London Pride Morris All Rights Reserved.</p>
     </footer>
+
+    <!-- Lightbox Modal Structure -->
+    <div id="lightbox-modal" class="lightbox-modal">
+        <div class="lightbox-content">
+            <span class="lightbox-close">×</span>
+            <img src="" alt="" class="lightbox-image">
+            <div class="lightbox-caption"></div>
+        </div>
+    </div>
+
+    <!-- Link to your custom JavaScript -->
+    <script src="static/script.js"></script>
 </body>
 </html>
