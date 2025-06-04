@@ -3,13 +3,6 @@ from flask import Flask, render_template
 from flask_frozen import Freezer
 import os
 
-import shutil
-import os
-
-build_dir = 'build'
-if os.path.exists(build_dir):
-    shutil.rmtree(build_dir)
-
 
 # Create a Flask application instance
 app = Flask(__name__)
@@ -23,7 +16,7 @@ app.static_folder = 'static'  # Assuming you'll add a static folder later for CS
 # This is where your static HTML files will be generated.
 app.config['FREEZER_DESTINATION'] = 'build'
 # This tells Flask-Frozen to generate a sitemap.xml
-app.config['FREEZER_SITEMAP_FILENAME'] = 'sitemap.xml'
+#app.config['FREEZER_SITEMAP_FILENAME'] = 'sitemap.xml'
 # IMPORTANT: Setting this to True (or omitting it as it's the default)
 # will make Flask-Frozen generate clean URLs like /gallery/index.html
 # instead of /gallery.html or just /gallery. This is the standard for static sites.
@@ -37,12 +30,6 @@ def home():
     # Render the 'index.html' template when the home page is accessed
     return render_template('index.html')
 
-
-# Define a route for the about page ('/about')
-#@app.route('/about')
-#def about():
-#    # Render the 'about.html' template
-#    return render_template('about.html')
 
 
 # Define a route for the gallery page ('/gallery')
