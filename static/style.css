@@ -1,0 +1,353 @@
+/* General Body and HTML Reset */
+:root {
+    --primary-color: #8B0000; /* Dark Red from the logo/site */
+    --secondary-color: #E0E0E0; /* Light Grey for backgrounds */
+    --text-color: #333;
+    --light-text-color: #FFF;
+    --dark-bg: #333;
+    --form-bg: #F9F9F9;
+    --border-color: #CCC;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--secondary-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure footer sticks to bottom */
+}
+
+main {
+    flex: 1; /* Allows main content to grow and push footer down */
+}
+
+/* Header and Navigation */
+.header {
+    background-color: var(--dark-bg);
+    color: var(--light-text-color);
+    padding: 1rem 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    gap: 1.5rem; /* Space between nav items */
+    padding: 0 1rem;
+}
+
+.nav-item {
+    color: var(--light-text-color);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 8px; /* Rounded corners for nav items */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-item:hover, .nav-item.active {
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+}
+
+/* Hero Section */
+.hero-section {
+    background: url('https://placehold.co/1200x600/8B0000/FFF?text=Thaxted+Morris+Men+Image') no-repeat center center/cover;
+    color: var(--light-text-color);
+    text-align: center;
+    padding: 8rem 2rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4); /* Dark overlay for text readability */
+    border-radius: 0 0 15px 15px; /* Rounded bottom corners */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+}
+
+.hero-logo {
+    width: 120px; /* Adjust size as needed */
+    height: 120px;
+    border-radius: 50%; /* Make it circular */
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 3px solid var(--light-text-color); /* Border around logo */
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-section p {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.social-icons {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.social-icon {
+    color: var(--light-text-color);
+    font-size: 2rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icon:hover {
+    color: var(--primary-color); /* Change color on hover */
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Content Sections (Welcome, Contact) */
+.content-section {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    padding: 3rem 2rem;
+    margin: 2rem auto;
+    max-width: 1200px;
+    background-color: var(--light-text-color);
+    border-radius: 12px; /* Rounded corners for sections */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.welcome-section {
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+}
+
+.content-left, .content-right, .content-full {
+    flex: 1;
+    min-width: 300px; /* Minimum width before wrapping */
+    padding: 1rem;
+}
+
+.content-left {
+    padding-right: 2rem;
+}
+
+.content-left h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 3px solid var(--light-text-color);
+    padding-bottom: 0.5rem;
+    display: inline-block; /* To make border only under text */
+}
+
+.welcome-section .content-right {
+    border-left: 1px solid rgba(255,255,255,0.3); /* Separator line */
+    padding-left: 2rem;
+}
+
+.content-section p {
+    margin-bottom: 1rem;
+}
+
+/* Contact Section Specifics */
+.contact-section .content-left h2 {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+}
+
+.contact-section .social-icon {
+    color: var(--primary-color); /* Social icons in primary color */
+}
+
+.contact-section .social-icon:hover {
+    color: #000; /* Darken on hover */
+}
+
+.contact-form-container {
+    padding-left: 2rem;
+    border-left: 1px solid var(--border-color); /* Separator line */
+}
+
+.contact-form .form-group {
+    margin-bottom: 1rem;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px; /* Rounded form fields */
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+}
+
+.contact-form textarea {
+    resize: vertical; /* Allow vertical resizing */
+}
+
+.submit-button {
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 8px; /* Rounded button */
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submit-button:hover {
+    background-color: #B22222; /* Slightly darker red on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* About Page Specifics */
+.about-page-content {
+    background-color: var(--light-text-color); /* White background for about content */
+    color: var(--text-color);
+}
+
+.about-page-content h2, .about-page-content h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+
+.about-page-content h3 {
+    font-size: 1.8rem;
+    margin-top: 2rem;
+}
+
+.content-full {
+    width: 100%;
+    padding: 1rem;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    text-align: center;
+    padding: 1.5rem 2rem;
+    margin-top: 2rem; /* Space above footer */
+    border-radius: 15px 15px 0 0; /* Rounded top corners */
+}
+
+.footer-social .social-icon {
+    color: var(--light-text-color);
+    font-size: 1.8rem;
+}
+
+.footer-social .social-icon:hover {
+    color: #FFD700; /* Gold on hover for footer icons */
+}
+
+.footer p {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .nav-item {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero-section {
+        padding: 6rem 1rem;
+    }
+
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-section p {
+        font-size: 1.2rem;
+    }
+
+    .content-section {
+        flex-direction: column;
+        padding: 2rem 1rem;
+        margin: 1rem auto;
+    }
+
+    .content-left, .content-right, .contact-form-container {
+        padding: 1rem 0;
+        border-left: none; /* Remove border on small screens */
+    }
+
+    .welcome-section .content-right {
+        border-top: 1px solid rgba(255,255,255,0.3); /* Add top border instead */
+        padding-top: 1rem;
+    }
+
+    .contact-form-container {
+        border-top: 1px solid var(--border-color); /* Add top border instead */
+        padding-top: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+
+    .hero-section p {
+        font-size: 1rem;
+    }
+
+    .social-icon {
+        font-size: 1.5rem;
+    }
+
+    .content-left h2 {
+        font-size: 2rem;
+    }
+
+    .about-page-content h2, .about-page-content h3 {
+        font-size: 1.5rem;
+    }
+}
