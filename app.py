@@ -15,7 +15,7 @@ app.static_folder = 'static'  # Assuming you'll add a static folder later for CS
 # This is where your static HTML files will be generated.
 app.config['FREEZER_DESTINATION'] = 'build'
 # This tells Flask-Frozen to generate a sitemap.xml
-#app.config['FREEZER_SITEMAP_FILENAME'] = 'sitemap.xml'
+app.config['FREEZER_SITEMAP_FILENAME'] = 'sitemap.xml'
 # IMPORTANT: Setting this to True (or omitting it as it's the default)
 # will make Flask-Frozen generate clean URLs like /gallery/index.html
 # instead of /gallery.html or just /gallery. This is the standard for static sites.
